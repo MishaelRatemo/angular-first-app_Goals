@@ -1,5 +1,6 @@
 
 <div>
+   <!-- <ng-progress></ng-progress> -->
     <h1>My Goals</h1>
    <hr>
    <ul>
@@ -13,10 +14,19 @@
       <button (click)='toggleDetails(i)'>Toggle Details</button>
       <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goal-detail>
     </div>
-    
+     
    </ul>
    
    <p *ngIf='goals.length > 5'>Your goals are too many</p>
+
+   <div class="row">
+      <blockquote class=" blockquote text-center">
+         <h1>  Today's Qoute</h1>
+         <p class="mb-3 p-1">{{quote.quote }}</p>
+         <footer class="blockquote-footer p-2 "> By <cite>{{ quote.author }}</cite></footer>
+      </blockquote>
+
+   </div>
  
 </div>
 <div class="col-md-6">

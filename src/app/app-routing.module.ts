@@ -2,10 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { GoalComponent } from './goal/goal.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {path: 'goals', component:GoalComponent},
-  {path: 'about', component:AboutComponent}
+  { path: 'goals', component: GoalComponent },
+  { path: 'about', component: AboutComponent },
+  // passing parameter
+  { path: 'goals/:id', component: GoalComponent},
+  // redirect ho home
+  { path: '', redirectTo: "/goals", pathMatch: "full" },
+  // not found === 404 page
+  { path: '**', component: NotFoundComponent },
+
+
 ];
 
 @NgModule({
